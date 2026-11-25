@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "identity": "51ab72402b699e3bbf19ac3889419ed40fb403820a0a6e8485ba2ebebbdb46be",
+  "cases": [
+    {
+      "case_id": "abc390_e-00",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 1.187999999994645,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc390_e-01",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 1.0779999999940628,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc390_e-02",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.875,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": false,
+  "passed": 0,
+  "total": 3
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "identity": "897080cebdd5f9b30ca88be7a34f0aa006d34ea5b66f4a86839baf03b4c4270c",
+  "cases": [
+    {
+      "case_id": "abc389_e-03",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.9220000000059372,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-04",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.9060000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-05",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7819999999919673,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-06",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7649999999994179,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-07",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7819999999919673,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-08",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7969999999913853,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-09",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.8589999999967404,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-10",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7810000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-11",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7970000000059372,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-12",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.9379999999946449,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-13",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 1.0,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-14",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 1.062999999994645,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc389_e-15",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.7189999999973224,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": false,
+  "passed": 0,
+  "total": 13
+}

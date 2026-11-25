@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "abc391_e-00",
+    "input": {
+      "bits": "001"
+    },
+    "expected": 1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc391_e-01",
+    "input": {
+      "bits": "111010001"
+    },
+    "expected": 1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc391_e-02",
+    "input": {
+      "bits": "111"
+    },
+    "expected": 2,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

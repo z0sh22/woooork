@@ -1,0 +1,35 @@
+[
+  {
+    "case_id": "lc200-00",
+    "input": {
+      "grid": [
+        "0"
+      ]
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc200-01",
+    "input": {
+      "grid": [
+        "101",
+        "010",
+        "101"
+      ]
+    },
+    "expected": 5,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc200-02",
+    "input": {
+      "grid": [
+        "111",
+        "001"
+      ]
+    },
+    "expected": 1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "case_id": "lc10-00",
+    "input": {
+      "s": "bbb",
+      "p": "b*"
+    },
+    "expected": true,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc10-01",
+    "input": {
+      "s": "abcc",
+      "p": "a.c*"
+    },
+    "expected": true,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc10-02",
+    "input": {
+      "s": "abc",
+      "p": "a*d"
+    },
+    "expected": false,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

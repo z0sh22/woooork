@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "identity": "70ffe805ed95052882be264c769c5e580f4ca1f0d14bf1c251b81a3cf3967c0f",
+  "cases": [
+    {
+      "case_id": "lc32-03",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "8\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8589999999967404,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-04",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "10\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.75,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-05",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "6\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9850000000005821,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-06",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "14\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8279999999940628,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-07",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "24\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.014999999999418,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-08",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "6\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9370000000053551,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-09",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "14\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8910000000032596,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-10",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "20\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8130000000091968,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-11",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "4\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9060000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-12",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "6\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8129999999946449,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-13",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "16\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.0,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-14",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "6\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8289999999979045,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc32-15",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "10000\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8129999999946449,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": true,
+  "passed": 13,
+  "total": 13
+}

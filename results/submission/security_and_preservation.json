@@ -1,0 +1,7 @@
+{
+  "secrets_found": false,
+  "staged_blobs_checked": 288,
+  "preserved_files_checked": 893,
+  "archive_packaging": "Frozen r2 sources stored in r2-source.zip to retain nested .gitattributes without newline conversion.",
+  "no_new_llm_requests": true
+}

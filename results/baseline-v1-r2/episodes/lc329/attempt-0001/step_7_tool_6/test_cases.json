@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "lc329-00",
+    "input": {
+      "matrix": [
+        [
+          4
+        ]
+      ]
+    },
+    "expected": 1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc329-01",
+    "input": {
+      "matrix": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          6,
+          5,
+          4
+        ]
+      ]
+    },
+    "expected": 6,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc329-02",
+    "input": {
+      "matrix": [
+        [
+          8,
+          8
+        ],
+        [
+          8,
+          8
+        ]
+      ]
+    },
+    "expected": 1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

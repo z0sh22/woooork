@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+
+# Preserve frozen scientific artifacts byte-for-byte.
+/data/** -text
+/results/** -text
+/configs/baseline_v1.toml -text
+/prompts/coding_agent_v1.txt -text

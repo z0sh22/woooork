@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "identity": "9f4ed73bd0794e166f3a8912a440adb26c6600da1e4ba43f98d9d1978d0fb96f",
+  "cases": [
+    {
+      "case_id": "abc391_f-00",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 1.6089999999967404,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc391_f-01",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 1.2810000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "abc391_f-02",
+      "status": "runtime_error",
+      "execution": {
+        "status": "runtime_error",
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/solution.py\", line 10, in <module>\n    print(json.dumps(solve(json.load(sys.stdin))))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/solution.py\", line 6, in solve\n    raise NotImplementedError\nNotImplementedError\n",
+        "exit_code": 1,
+        "duration_s": 0.8120000000053551,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": false,
+  "passed": 0,
+  "total": 3
+}

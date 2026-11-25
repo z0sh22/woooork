@@ -1,0 +1,25 @@
+# Infrastructure configuration only. No tasks, agent prompts or reward rules.
+name = "baseline"
+mode = "baseline"
+rounds = 1
+seed = 0
+output_dir = "runs"
+
+[llm]
+backend = "api" # "api" or "local"; an adapter must be supplied later
+model = "unconfigured"
+temperature = 0.0
+max_output_tokens = 1024
+timeout_s = 60.0
+# api_key_env = "LLM_API_KEY" # environment variable NAME, never its value
+
+[sandbox]
+image = "safety-games-sandbox:local"
+timeout_s = 5.0
+memory_mb = 128
+cpus = 0.5
+pids_limit = 32
+tmpfs_mb = 16
+max_output_bytes = 65536
+max_source_bytes = 262144
+max_stdin_bytes = 262144

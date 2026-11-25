@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "lc32-00",
+    "input": {
+      "s": ""
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc32-01",
+    "input": {
+      "s": "(()())"
+    },
+    "expected": 6,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc32-02",
+    "input": {
+      "s": ")()())("
+    },
+    "expected": 4,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

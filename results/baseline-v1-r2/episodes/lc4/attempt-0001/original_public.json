@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "identity": "575ba7d216ef1ec32d2616422507ad9618027d25e8a55a8ff0c1231d1eb693f0",
+  "cases": [
+    {
+      "case_id": "lc4-00",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "7\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.125,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-01",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-2.0\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.0310000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-02",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "2\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.875,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": false,
+  "passed": 2,
+  "total": 3
+}

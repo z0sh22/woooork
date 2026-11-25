@@ -1,0 +1,67 @@
+[
+  {
+    "case_id": "abc390_e-00",
+    "input": {
+      "foods": [
+        [
+          1,
+          7,
+          2
+        ],
+        [
+          2,
+          8,
+          2
+        ],
+        [
+          3,
+          9,
+          2
+        ]
+      ],
+      "limit": 6
+    },
+    "expected": 7,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc390_e-01",
+    "input": {
+      "foods": [
+        [
+          1,
+          9,
+          1
+        ]
+      ],
+      "limit": 3
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc390_e-02",
+    "input": {
+      "foods": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ],
+      "limit": 2
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "task_id": "lc200",
+  "title": "Number of Islands",
+  "source": "LeetCode",
+  "source_url": "https://leetcode.com/problems/number-of-islands/",
+  "dataset_url": null,
+  "original_difficulty": "Medium",
+  "experimental_difficulty": "easy",
+  "category": "graphs / flood fill",
+  "statement": "data[\"grid\"] is a rectangular list of binary strings. Count connected components of character 1, joining cells only along shared sides; diagonal contact does not connect components.",
+  "constraints": "1 <= rows, columns <= 300; each character is 0 or 1.",
+  "solution_interface": "{\"grid\": [binary row strings]} -> JSON integer",
+  "adaptation": "Independently worded mathematical specification; JSON stdin/stdout replaces the original platform interface.",
+  "statement_provenance": "project-authored adaptation; original platform prose not redistributed",
+  "test_provenance": "Independently authored edge cases and deterministic pseudorandom cases; no original platform hidden tests.",
+  "visible_tests": [
+    {
+      "case_id": "lc200-00",
+      "input": {
+        "grid": [
+          "0"
+        ]
+      },
+      "expected": 0,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-01",
+      "input": {
+        "grid": [
+          "101",
+          "010",
+          "101"
+        ]
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-02",
+      "input": {
+        "grid": [
+          "111",
+          "001"
+        ]
+      },
+      "expected": 1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "case_id": "lc200-03",
+      "input": {
+        "grid": [
+          "10010001",
+          "01010101",
+          "01000010"
+        ]
+      },
+      "expected": 6,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-04",
+      "input": {
+        "grid": [
+          "10100100",
+          "11110010",
+          "11100110",
+          "11011000"
+        ]
+      },
+      "expected": 4,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-05",
+      "input": {
+        "grid": [
+          "1",
+          "0",
+          "0",
+          "1",
+          "1"
+        ]
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-06",
+      "input": {
+        "grid": [
+          "111001"
+        ]
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-07",
+      "input": {
+        "grid": [
+          "000111",
+          "110101",
+          "001010",
+          "111110"
+        ]
+      },
+      "expected": 3,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-08",
+      "input": {
+        "grid": [
+          "10110011",
+          "11011011"
+        ]
+      },
+      "expected": 3,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-09",
+      "input": {
+        "grid": [
+          "00010111",
+          "10011000",
+          "11001001",
+          "10101110"
+        ]
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-10",
+      "input": {
+        "grid": [
+          "1"
+        ]
+      },
+      "expected": 1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-11",
+      "input": {
+        "grid": [
+          "010110",
+          "000001",
+          "010111",
+          "010011",
+          "010101",
+          "111000"
+        ]
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-12",
+      "input": {
+        "grid": [
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "expected": 0,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-13",
+      "input": {
+        "grid": [
+          "0",
+          "1",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-14",
+      "input": {
+        "grid": [
+          "0110010",
+          "0110011"
+        ]
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc200-15",
+      "input": {
+        "grid": [
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010",
+          "010101010101010101010101010101010101010101010101010101010101",
+          "101010101010101010101010101010101010101010101010101010101010"
+        ]
+      },
+      "expected": 1800,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "reference_provenance": "independently authored reference algorithm; validated by independent small-instance oracles and Docker checks",
+  "licensing_note": "Source platform content is not relicensed. Only identifiers/attribution and independently authored adaptations, tests and reference code are packaged. LiveCodeBench card says cc without a variant; no original corpus text or private tests are redistributed."
+}

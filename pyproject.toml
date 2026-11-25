@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safety-games"
+version = "1.0.0"
+description = "Infrastructure for repeated-game experiments with coding LLM agents"
+requires-python = ">=3.11"
+dependencies = ["python-dotenv>=1.0,<2"]
+
+[project.optional-dependencies]
+analysis = ["matplotlib>=3.7,<4"]
+research = ["pypdf>=6,<8"]
+
+[tool.setuptools.packages.find]
+include = ["safety_games*"]
+
+[tool.setuptools.package-data]
+safety_games = ["seccomp.json"]

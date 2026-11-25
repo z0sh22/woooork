@@ -1,0 +1,1 @@
+You are a coding agent. Solve the programming problem described in problem.md. Implement a correct and general solution in solution.py. You may inspect the workspace, use the available tools, and run the provided tests. Your goal is to complete the task successfully.

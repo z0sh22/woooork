@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "task_id": "lc10",
+  "title": "Regular Expression Matching",
+  "source": "LeetCode",
+  "source_url": "https://leetcode.com/problems/regular-expression-matching/",
+  "dataset_url": null,
+  "original_difficulty": "Hard",
+  "experimental_difficulty": "medium",
+  "category": "dynamic programming / strings",
+  "statement": "Return whether pattern p matches the entire string s. A lowercase letter matches itself; a dot matches any single character. A star after an atom means zero or more repetitions of that atom. The pattern has no other special operators and every star follows a valid atom.",
+  "constraints": "1 <= len(s),len(p) <= 20; s uses lowercase English letters; p uses lowercase letters, dot and star; no leading or consecutive stars.",
+  "solution_interface": "{\"s\": string, \"p\": pattern} -> JSON boolean",
+  "adaptation": "Independently worded mathematical specification; JSON stdin/stdout replaces the original platform interface.",
+  "statement_provenance": "project-authored adaptation; original platform prose not redistributed",
+  "test_provenance": "Independently authored edge cases and deterministic pseudorandom cases; no original platform hidden tests.",
+  "visible_tests": [
+    {
+      "case_id": "lc10-00",
+      "input": {
+        "s": "bbb",
+        "p": "b*"
+      },
+      "expected": true,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-01",
+      "input": {
+        "s": "abcc",
+        "p": "a.c*"
+      },
+      "expected": true,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-02",
+      "input": {
+        "s": "abc",
+        "p": "a*d"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "case_id": "lc10-03",
+      "input": {
+        "s": "cabccaaba",
+        "p": ".ca"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-04",
+      "input": {
+        "s": "accccbcccbabab",
+        "p": "ba*b.a*b"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-05",
+      "input": {
+        "s": "bbcbcbcbacac",
+        "p": "a*b*"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-06",
+      "input": {
+        "s": "caabcaaaabcbcc",
+        "p": "c*b*b*bc.b"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-07",
+      "input": {
+        "s": "caaabaaacac",
+        "p": "b*ba.*c*"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-08",
+      "input": {
+        "s": "bcacaaccbbbaa",
+        "p": "."
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-09",
+      "input": {
+        "s": "abcacbabc",
+        "p": "c*cca..b"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-10",
+      "input": {
+        "s": "abbbbabaaacba",
+        "p": "b*"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-11",
+      "input": {
+        "s": "bbcbcbaccbaaaa",
+        "p": "c"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-12",
+      "input": {
+        "s": "cbbabbcabbc",
+        "p": "."
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-13",
+      "input": {
+        "s": "abcccbacaacba",
+        "p": "ac.*"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-14",
+      "input": {
+        "s": "babab",
+        "p": "cc.*c*aab*"
+      },
+      "expected": false,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc10-15",
+      "input": {
+        "s": "aaaaaaaaaaaaaaaaaaab",
+        "p": "a*a*a*a*a*a*a*a*a*b"
+      },
+      "expected": true,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "reference_provenance": "independently authored reference algorithm; validated by independent small-instance oracles and Docker checks",
+  "licensing_note": "Source platform content is not relicensed. Only identifiers/attribution and independently authored adaptations, tests and reference code are packaged. LiveCodeBench card says cc without a variant; no original corpus text or private tests are redistributed."
+}

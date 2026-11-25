@@ -1,0 +1,7 @@
+{
+  "kind": "real_resume_validation",
+  "task_id": "lc42",
+  "model_requests_after_interruption": 0,
+  "completed_after_resume": true,
+  "evaluation_events_after_resume": 13
+}

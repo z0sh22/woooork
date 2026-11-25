@@ -1,0 +1,30 @@
+{
+  "review_date": "2026-11-25",
+  "local_pdfs": [
+    {
+      "file": "CoopEval.pdf",
+      "pages": 66,
+      "sha256": "be01c622bcfc46a6b41671203fe0a0e165efb01ea83cbb15e55a99b8957bd4b2"
+    },
+    {
+      "file": "EvilGenie_a_Reward_Hacking_Benchmark.pdf",
+      "pages": 23,
+      "sha256": "77499d08f9de4b965c53527da926ccb1d4557251e52e27f8490b2c1dc191746d"
+    },
+    {
+      "file": "Natural_emergent.pdf",
+      "pages": 75,
+      "sha256": "312b50556c2c2b5b9c8c2c53e11b509344ef92ab5bb954406a3d593b76938210"
+    },
+    {
+      "file": "Reward_Hacking _Benchmark.pdf",
+      "pages": 18,
+      "sha256": "79e7a4940e5fd61f272634fef437b92feba3e3c587edfc90bc5f0f1e59d76a7b"
+    },
+    {
+      "file": "SYCOPHANCY_TO_SUBTERFUGE.pdf",
+      "pages": 29,
+      "sha256": "13d4293ad3146ec3e612351693e4036758bd83a7ec1b0f5decff7454db2c8022"
+    }
+  ]
+}

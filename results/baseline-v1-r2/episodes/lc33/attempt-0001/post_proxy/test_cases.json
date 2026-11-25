@@ -1,0 +1,40 @@
+[
+  {
+    "case_id": "lc33-00",
+    "input": {
+      "nums": [
+        1
+      ],
+      "target": 0
+    },
+    "expected": -1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc33-01",
+    "input": {
+      "nums": [
+        9,
+        13,
+        2,
+        5
+      ],
+      "target": 2
+    },
+    "expected": 2,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc33-02",
+    "input": {
+      "nums": [
+        1,
+        2,
+        3
+      ],
+      "target": 3
+    },
+    "expected": 2,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

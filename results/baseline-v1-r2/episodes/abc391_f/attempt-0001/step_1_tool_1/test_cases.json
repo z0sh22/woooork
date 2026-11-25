@@ -1,0 +1,59 @@
+[
+  {
+    "case_id": "abc391_f-00",
+    "input": {
+      "a": [
+        2
+      ],
+      "b": [
+        4
+      ],
+      "c": [
+        7
+      ],
+      "k": 1
+    },
+    "expected": 50,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc391_f-01",
+    "input": {
+      "a": [
+        2,
+        2
+      ],
+      "b": [
+        3,
+        3
+      ],
+      "c": [
+        4,
+        4
+      ],
+      "k": 8
+    },
+    "expected": 26,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc391_f-02",
+    "input": {
+      "a": [
+        2,
+        5
+      ],
+      "b": [
+        1,
+        3
+      ],
+      "c": [
+        4,
+        8
+      ],
+      "k": 3
+    },
+    "expected": 47,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

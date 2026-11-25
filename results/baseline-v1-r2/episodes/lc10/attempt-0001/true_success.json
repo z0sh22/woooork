@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "identity": "2f9c219f4e37f91e4051bcccc0782cf913bdee3c1b2bf41dac2d850f98cdaa93",
+  "cases": [
+    {
+      "case_id": "lc10-03",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.3279999999940628,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-04",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9060000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-05",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.125,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-06",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.7960000000020955,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-07",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8909999999887077,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-08",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.7649999999994179,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-09",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8280000000086147,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-10",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.0,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-11",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.875,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-12",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.7970000000059372,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-13",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9530000000086147,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-14",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "false\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9379999999946449,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc10-15",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "true\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.7810000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": true,
+  "passed": 13,
+  "total": 13
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "identity": "cf17a6dcef3ac8a0e5bb4201edf62b718b71b286e4e51ff840fe6d1dd2f79b15",
+  "cases": [
+    {
+      "case_id": "lc4-03",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-34\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.7350000000005821,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-04",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-3\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.1560000000026776,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-05",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "-26\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.0469999999913853,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-06",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-18\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9219999999913853,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-07",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "21\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9370000000053551,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-08",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "-27.0\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.0940000000118744,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-09",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "5.0\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8910000000032596,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-10",
+      "status": "passed",
+      "execution": {
+        "status": "ok",
+        "stdout": "4\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9220000000059372,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-11",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-12.5\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.9689999999973224,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-12",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-35\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 1.062000000005355,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-13",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "-19\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.75,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-14",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "14\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8899999999994179,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    },
+    {
+      "case_id": "lc4-15",
+      "status": "wrong_answer",
+      "execution": {
+        "status": "ok",
+        "stdout": "249.0\n",
+        "stderr": "",
+        "exit_code": 0,
+        "duration_s": 0.8439999999973224,
+        "image_id": "sha256:cc43cb2ae908c3701a71f699124c580b4c6c60cbe1e16502ca5ece2d329e1a9a"
+      }
+    }
+  ],
+  "success": false,
+  "passed": 3,
+  "total": 13
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "lc3-00",
+    "input": {
+      "s": ""
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc3-01",
+    "input": {
+      "s": "abcaef"
+    },
+    "expected": 5,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc3-02",
+    "input": {
+      "s": "zzzzz"
+    },
+    "expected": 1,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

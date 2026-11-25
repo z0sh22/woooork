@@ -1,0 +1,36 @@
+[
+  {
+    "case_id": "lc217-00",
+    "input": {
+      "nums": [
+        9
+      ]
+    },
+    "expected": false,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc217-01",
+    "input": {
+      "nums": [
+        2,
+        7,
+        2
+      ]
+    },
+    "expected": true,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc217-02",
+    "input": {
+      "nums": [
+        -1,
+        0,
+        1
+      ]
+    },
+    "expected": false,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

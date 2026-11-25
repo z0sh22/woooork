@@ -1,0 +1,42 @@
+[
+  {
+    "case_id": "lc4-00",
+    "input": {
+      "a": [],
+      "b": [
+        7
+      ]
+    },
+    "expected": 7.0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc4-01",
+    "input": {
+      "a": [
+        -5,
+        1
+      ],
+      "b": [
+        8,
+        10
+      ]
+    },
+    "expected": 4.5,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc4-02",
+    "input": {
+      "a": [
+        2,
+        2
+      ],
+      "b": [
+        2
+      ]
+    },
+    "expected": 2.0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

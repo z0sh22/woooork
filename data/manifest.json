@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "generator_seed": 20261125,
+  "test_provenance": "Independently authored edge cases and deterministic pseudorandom cases; no original platform hidden tests.",
+  "tasks": [
+    {
+      "task_id": "lc217",
+      "experimental_difficulty": "easy",
+      "task_sha256": "0c8bffdb74563e9deaa1b00e42f48f06781127f4039e6417defd66b8709eefba",
+      "reference_sha256": "d2f9be37785e022c1d403fc934395a7c5375caf99fd962de6cece5b39f44e188"
+    },
+    {
+      "task_id": "lc3",
+      "experimental_difficulty": "easy",
+      "task_sha256": "12d3c8ea8cd92b6509d1ce66738fb73358cbdd20b61e405585a0e67c030d2f72",
+      "reference_sha256": "6f383eb032401f0afe4b5013e188602e0496746cc3e1b7a3300b4cd44b4ce819"
+    },
+    {
+      "task_id": "lc33",
+      "experimental_difficulty": "easy",
+      "task_sha256": "79bad8073f161120b4a3d172dbb0627edff5fb70ce35b8f6292ecbba48f27552",
+      "reference_sha256": "927b8dfe1797f4bf46d30cce7a73849fcb9a574a5fb1ecd8f650d68eb534ae6c"
+    },
+    {
+      "task_id": "lc200",
+      "experimental_difficulty": "easy",
+      "task_sha256": "7d7bac196dd20fc821241437606f6c32a9f37b03ad0c33e365bd84a89eb83075",
+      "reference_sha256": "47e4083bfdf77a4730e42ba3b03bd7a778496ae4db2256de994a53111e04e682"
+    },
+    {
+      "task_id": "lc322",
+      "experimental_difficulty": "easy",
+      "task_sha256": "142d1e3ca2ab668e73ca0ab8fe5b3ecd4488b6f0fca840613d0c5dade810ed7b",
+      "reference_sha256": "c651de70d104be2803c96de3f9c4603aefdc6c5a7facef2cacd2ef110a78d7f9"
+    },
+    {
+      "task_id": "lc4",
+      "experimental_difficulty": "medium",
+      "task_sha256": "73d9dcbdaf53a8b946b4aa14709e2b9f6894efc7cd2f4eebca138f142d24dce7",
+      "reference_sha256": "a77366756d17968a39d57b83fcc6bf4d226ff64a42399b4e5d31117811af5462"
+    },
+    {
+      "task_id": "lc32",
+      "experimental_difficulty": "medium",
+      "task_sha256": "cde9bc27a16da4cc1fd4e9350b448a7b05b12441fc6ef5435ab1e1aee36172bf",
+      "reference_sha256": "a8fe6ae51462cb4422d8753a8eee7bd5a5bcac155e34cb87a86e56264b600bdf"
+    },
+    {
+      "task_id": "lc42",
+      "experimental_difficulty": "medium",
+      "task_sha256": "46eae2b4b7160cbe76fec96fb4911640b39ae8886fd2d2240c6618c19e45dc3d",
+      "reference_sha256": "36777b38791135ca1438d8c7b25a4591ad551012798b063eba8aec6d2dcfa412"
+    },
+    {
+      "task_id": "lc10",
+      "experimental_difficulty": "medium",
+      "task_sha256": "fa26620cd16aa891a1ac9c1e1bd406e054886b2844d5a400c74de6fe91fbee9f",
+      "reference_sha256": "904bfebdaaa5002dccf04b6098236492e733c00b3a6f49678a030827649179be"
+    },
+    {
+      "task_id": "lc329",
+      "experimental_difficulty": "medium",
+      "task_sha256": "2b5b025ef16a534c13b400b97734800cdf8470501d6d0e138a08c2188e70759c",
+      "reference_sha256": "3b9dc196d8918f96f18feab254e7f590e810052f6cef6232060520ea5f060b70"
+    },
+    {
+      "task_id": "abc389_e",
+      "experimental_difficulty": "hard",
+      "task_sha256": "92d8dd5391f71892dc58d685504c0f95465328b8170902abdc746ae45b621d1e",
+      "reference_sha256": "9f5e41bde1a8d4292c8f0816a270e5c3f1e4358fe2832608baee8d4fe4f52cca"
+    },
+    {
+      "task_id": "abc390_e",
+      "experimental_difficulty": "hard",
+      "task_sha256": "349e567461d98eaa3ccc4622a58213f9f5d40b778281940fb34a4c6aba3fdf94",
+      "reference_sha256": "5e41475ef9ffe64914df79abb328a678a0d041af4c691c97ce3afc50187ba0e3"
+    },
+    {
+      "task_id": "abc391_f",
+      "experimental_difficulty": "hard",
+      "task_sha256": "6d5c29697f72c3395ec8ac0e308b6868a2f35cfc493ab27dd91a9049c88bb3ea",
+      "reference_sha256": "4f0fd644e83c0a795c533e5130cb20962d0450846103cb81fdbf5f52149645b2"
+    },
+    {
+      "task_id": "abc391_e",
+      "experimental_difficulty": "hard",
+      "task_sha256": "e14cf997388bbf8b45d5d4c6beb45708162f101158ea4cfebb011dfc5b89ae24",
+      "reference_sha256": "cdddce63dc5457d1bbda8701c348a08571cf739ccde533e8073cb09d23ac2d7c"
+    },
+    {
+      "task_id": "abc392_f",
+      "experimental_difficulty": "hard",
+      "task_sha256": "e779514e6ae06a58b754ef76856c9aa2392a3e95b67b0c75adaf9d309c6fd46f",
+      "reference_sha256": "0512877e3b8d615031f770b6f7efd9360a83af2fc64dc4212ca153e8dbf18ebc"
+    }
+  ]
+}

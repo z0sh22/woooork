@@ -1,0 +1,37 @@
+[
+  {
+    "case_id": "abc389_e-00",
+    "input": {
+      "prices": [
+        2,
+        5,
+        9
+      ],
+      "budget": 17
+    },
+    "expected": 3,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc389_e-01",
+    "input": {
+      "prices": [
+        8
+      ],
+      "budget": 7
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "abc389_e-02",
+    "input": {
+      "prices": [
+        3
+      ],
+      "budget": 75
+    },
+    "expected": 5,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

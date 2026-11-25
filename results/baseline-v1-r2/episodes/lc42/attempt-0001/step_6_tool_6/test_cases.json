@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "lc42-00",
+    "input": {
+      "height": [
+        4
+      ]
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc42-01",
+    "input": {
+      "height": [
+        5,
+        0,
+        1,
+        0,
+        4
+      ]
+    },
+    "expected": 11,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  },
+  {
+    "case_id": "lc42-02",
+    "input": {
+      "height": [
+        0,
+        1,
+        2
+      ]
+    },
+    "expected": 0,
+    "provenance": "project-authored; deterministic fixture generator v1"
+  }
+]

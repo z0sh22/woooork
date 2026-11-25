@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "task_id": "lc3",
+  "title": "Longest Substring Without Repeating Characters",
+  "source": "LeetCode",
+  "source_url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+  "dataset_url": null,
+  "original_difficulty": "Medium",
+  "experimental_difficulty": "easy",
+  "category": "sliding window / strings",
+  "statement": "Return the largest length of a contiguous segment of data[\"s\"] in which every character is distinct. The empty string has answer 0.",
+  "constraints": "0 <= len(s) <= 50000; printable ASCII characters.",
+  "solution_interface": "{\"s\": string} -> JSON integer",
+  "adaptation": "Independently worded mathematical specification; JSON stdin/stdout replaces the original platform interface.",
+  "statement_provenance": "project-authored adaptation; original platform prose not redistributed",
+  "test_provenance": "Independently authored edge cases and deterministic pseudorandom cases; no original platform hidden tests.",
+  "visible_tests": [
+    {
+      "case_id": "lc3-00",
+      "input": {
+        "s": ""
+      },
+      "expected": 0,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-01",
+      "input": {
+        "s": "abcaef"
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-02",
+      "input": {
+        "s": "zzzzz"
+      },
+      "expected": 1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "case_id": "lc3-03",
+      "input": {
+        "s": "!b"
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-04",
+      "input": {
+        "s": "bFebca!b a!e F!bGaeebGGcbFd"
+      },
+      "expected": 7,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-05",
+      "input": {
+        "s": "edFbdeFeccFd!dbFeacGcdac GFFeaabGb"
+      },
+      "expected": 8,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-06",
+      "input": {
+        "s": "!eaeeaaGeeFaa"
+      },
+      "expected": 3,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-07",
+      "input": {
+        "s": " daGebbGcd ac!Gea! aGdddeFFbedcb c!d!c"
+      },
+      "expected": 7,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-08",
+      "input": {
+        "s": "ee dbbGeddFFFbdecGbFc Fedcb!bbb"
+      },
+      "expected": 7,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-09",
+      "input": {
+        "s": "b"
+      },
+      "expected": 1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-10",
+      "input": {
+        "s": " a"
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-11",
+      "input": {
+        "s": "Gbc cbdaGGacG "
+      },
+      "expected": 6,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-12",
+      "input": {
+        "s": "bbFc ba  "
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-13",
+      "input": {
+        "s": "Fddbdea e dF"
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-14",
+      "input": {
+        "s": "!aGFaFcdcbd"
+      },
+      "expected": 4,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc3-15",
+      "input": {
+        "s": "abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz "
+      },
+      "expected": 27,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "reference_provenance": "independently authored reference algorithm; validated by independent small-instance oracles and Docker checks",
+  "licensing_note": "Source platform content is not relicensed. Only identifiers/attribution and independently authored adaptations, tests and reference code are packaged. LiveCodeBench card says cc without a variant; no original corpus text or private tests are redistributed."
+}

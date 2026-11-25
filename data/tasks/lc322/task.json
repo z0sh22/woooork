@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "task_id": "lc322",
+  "title": "Coin Change",
+  "source": "LeetCode",
+  "source_url": "https://leetcode.com/problems/coin-change/",
+  "dataset_url": null,
+  "original_difficulty": "Medium",
+  "experimental_difficulty": "easy",
+  "category": "dynamic programming",
+  "statement": "Given positive coin denominations and a nonnegative amount, return the smallest number of coins whose values sum to that amount, allowing unlimited copies. Return -1 if impossible; amount 0 needs 0 coins.",
+  "constraints": "1 <= len(coins) <= 12; distinct positive integers <= 2^31-1; 0 <= amount <= 10000.",
+  "solution_interface": "{\"coins\": [integers], \"amount\": integer} -> JSON integer",
+  "adaptation": "Independently worded mathematical specification; JSON stdin/stdout replaces the original platform interface.",
+  "statement_provenance": "project-authored adaptation; original platform prose not redistributed",
+  "test_provenance": "Independently authored edge cases and deterministic pseudorandom cases; no original platform hidden tests.",
+  "visible_tests": [
+    {
+      "case_id": "lc322-00",
+      "input": {
+        "coins": [
+          3,
+          7
+        ],
+        "amount": 0
+      },
+      "expected": 0,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-01",
+      "input": {
+        "coins": [
+          4,
+          6
+        ],
+        "amount": 7
+      },
+      "expected": -1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-02",
+      "input": {
+        "coins": [
+          1,
+          3,
+          4
+        ],
+        "amount": 6
+      },
+      "expected": 2,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "case_id": "lc322-03",
+      "input": {
+        "coins": [
+          17,
+          20,
+          13,
+          4,
+          2,
+          15,
+          1
+        ],
+        "amount": 59
+      },
+      "expected": 4,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-04",
+      "input": {
+        "coins": [
+          19,
+          13,
+          10,
+          16,
+          11,
+          3
+        ],
+        "amount": 44
+      },
+      "expected": 4,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-05",
+      "input": {
+        "coins": [
+          14,
+          13,
+          17,
+          12,
+          19,
+          1,
+          6
+        ],
+        "amount": 115
+      },
+      "expected": 7,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-06",
+      "input": {
+        "coins": [
+          6,
+          9,
+          14,
+          12,
+          16,
+          11
+        ],
+        "amount": 31
+      },
+      "expected": 3,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-07",
+      "input": {
+        "coins": [
+          3,
+          1
+        ],
+        "amount": 73
+      },
+      "expected": 25,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-08",
+      "input": {
+        "coins": [
+          12,
+          15,
+          7,
+          5,
+          8,
+          4,
+          11
+        ],
+        "amount": 66
+      },
+      "expected": 5,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-09",
+      "input": {
+        "coins": [
+          9,
+          10,
+          7
+        ],
+        "amount": 13
+      },
+      "expected": -1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-10",
+      "input": {
+        "coins": [
+          13,
+          20
+        ],
+        "amount": 5
+      },
+      "expected": -1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-11",
+      "input": {
+        "coins": [
+          16,
+          3,
+          7,
+          2,
+          13,
+          9,
+          18
+        ],
+        "amount": 39
+      },
+      "expected": 3,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-12",
+      "input": {
+        "coins": [
+          18,
+          5,
+          1,
+          15,
+          13,
+          4,
+          20
+        ],
+        "amount": 111
+      },
+      "expected": 6,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-13",
+      "input": {
+        "coins": [
+          8,
+          18,
+          11,
+          2,
+          20
+        ],
+        "amount": 67
+      },
+      "expected": 4,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-14",
+      "input": {
+        "coins": [
+          16,
+          3,
+          9
+        ],
+        "amount": 5
+      },
+      "expected": -1,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "lc322-15",
+      "input": {
+        "coins": [
+          7,
+          11,
+          19
+        ],
+        "amount": 9999
+      },
+      "expected": 529,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "reference_provenance": "independently authored reference algorithm; validated by independent small-instance oracles and Docker checks",
+  "licensing_note": "Source platform content is not relicensed. Only identifiers/attribution and independently authored adaptations, tests and reference code are packaged. LiveCodeBench card says cc without a variant; no original corpus text or private tests are redistributed."
+}

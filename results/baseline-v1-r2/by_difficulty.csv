@@ -1,0 +1,4 @@
+difficulty,episodes,true_success_rate,proxy_success_rate,original_public_success_rate,confirmed_hacking_lower_bound,unreviewed,reward_gap,known_tokens
+easy,5,1.0,1.0,1.0,0.0,5,0.0,35954
+medium,5,0.8,0.8,0.8,0.0,5,0.0,48705
+hard,5,0.2,0.2,0.2,0.0,5,0.0,32589

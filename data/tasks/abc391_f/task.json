@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "task_id": "abc391_f",
+  "title": "K",
+  "source": "LiveCodeBench release_v6 / AtCoder",
+  "source_url": "https://atcoder.jp/contests/abc391/tasks/abc391_f",
+  "dataset_url": "https://huggingface.co/datasets/livecodebench/code_generation_lite",
+  "original_difficulty": "Hard (LiveCodeBench)",
+  "experimental_difficulty": "hard",
+  "category": "heap / best-first search",
+  "statement": "Three positive integer arrays a,b,c have equal length N. For all N^3 index triples, form a[i]*b[j]+b[j]*c[z]+c[z]*a[i]. Return the k-th largest value, counting different index triples separately even when their values coincide.",
+  "constraints": "1 <= N <= 200000; 1 <= array values <= 10^9; 1 <= k <= min(N^3,500000).",
+  "solution_interface": "{\"a\": [integers], \"b\": [integers], \"c\": [integers], \"k\": integer} -> JSON integer",
+  "adaptation": "Independently worded mathematical specification; JSON stdin/stdout replaces the original platform interface.",
+  "statement_provenance": "project-authored adaptation; original platform prose not redistributed",
+  "test_provenance": "Independently authored edge cases and deterministic pseudorandom cases; no original platform hidden tests.",
+  "visible_tests": [
+    {
+      "case_id": "abc391_f-00",
+      "input": {
+        "a": [
+          2
+        ],
+        "b": [
+          4
+        ],
+        "c": [
+          7
+        ],
+        "k": 1
+      },
+      "expected": 50,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-01",
+      "input": {
+        "a": [
+          2,
+          2
+        ],
+        "b": [
+          3,
+          3
+        ],
+        "c": [
+          4,
+          4
+        ],
+        "k": 8
+      },
+      "expected": 26,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-02",
+      "input": {
+        "a": [
+          2,
+          5
+        ],
+        "b": [
+          1,
+          3
+        ],
+        "c": [
+          4,
+          8
+        ],
+        "k": 3
+      },
+      "expected": 47,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "hidden_tests": [
+    {
+      "case_id": "abc391_f-03",
+      "input": {
+        "a": [
+          81,
+          20,
+          74,
+          52,
+          5,
+          30,
+          57,
+          85
+        ],
+        "b": [
+          61,
+          100,
+          19,
+          49,
+          54,
+          74,
+          80,
+          51
+        ],
+        "c": [
+          24,
+          81,
+          24,
+          48,
+          6,
+          12,
+          39,
+          52
+        ],
+        "k": 363
+      },
+      "expected": 4185,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-04",
+      "input": {
+        "a": [
+          35,
+          64,
+          82,
+          92,
+          28,
+          48
+        ],
+        "b": [
+          34,
+          60,
+          50,
+          78,
+          58,
+          75
+        ],
+        "c": [
+          44,
+          17,
+          74,
+          95,
+          61,
+          21
+        ],
+        "k": 215
+      },
+      "expected": 2254,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-05",
+      "input": {
+        "a": [
+          60,
+          21,
+          30,
+          81,
+          45,
+          33,
+          68,
+          40
+        ],
+        "b": [
+          78,
+          4,
+          8,
+          76,
+          87,
+          50,
+          73,
+          59
+        ],
+        "c": [
+          80,
+          4,
+          3,
+          57,
+          100,
+          44,
+          7,
+          46
+        ],
+        "k": 315
+      },
+      "expected": 4311,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-06",
+      "input": {
+        "a": [
+          25,
+          32,
+          99,
+          21,
+          46
+        ],
+        "b": [
+          100,
+          97,
+          68,
+          13,
+          3
+        ],
+        "c": [
+          64,
+          85,
+          60,
+          48,
+          51
+        ],
+        "k": 75
+      },
+      "expected": 6976,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-07",
+      "input": {
+        "a": [
+          26,
+          6,
+          93,
+          24
+        ],
+        "b": [
+          20,
+          8,
+          13,
+          93
+        ],
+        "c": [
+          68,
+          75,
+          29,
+          61
+        ],
+        "k": 54
+      },
+      "expected": 1385,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-08",
+      "input": {
+        "a": [
+          49,
+          15,
+          6,
+          38
+        ],
+        "b": [
+          65,
+          74,
+          14,
+          79
+        ],
+        "c": [
+          31,
+          27,
+          49,
+          13
+        ],
+        "k": 43
+      },
+      "expected": 2604,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-09",
+      "input": {
+        "a": [
+          49,
+          65,
+          96,
+          69,
+          8,
+          79
+        ],
+        "b": [
+          37,
+          50,
+          20,
+          65,
+          42,
+          48
+        ],
+        "c": [
+          43,
+          2,
+          84,
+          40,
+          26,
+          71
+        ],
+        "k": 102
+      },
+      "expected": 7331,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-10",
+      "input": {
+        "a": [
+          43
+        ],
+        "b": [
+          16
+        ],
+        "c": [
+          42
+        ],
+        "k": 1
+      },
+      "expected": 3166,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-11",
+      "input": {
+        "a": [
+          74,
+          92,
+          48,
+          56,
+          60,
+          70,
+          2
+        ],
+        "b": [
+          6,
+          35,
+          28,
+          23,
+          13,
+          11,
+          56
+        ],
+        "c": [
+          73,
+          38,
+          69,
+          82,
+          50,
+          47,
+          41
+        ],
+        "k": 100
+      },
+      "expected": 7700,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-12",
+      "input": {
+        "a": [
+          9,
+          25,
+          93,
+          33,
+          42,
+          51,
+          23
+        ],
+        "b": [
+          87,
+          21,
+          5,
+          83,
+          80,
+          15,
+          4
+        ],
+        "c": [
+          27,
+          7,
+          75,
+          33,
+          90,
+          85,
+          81
+        ],
+        "k": 273
+      },
+      "expected": 1935,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-13",
+      "input": {
+        "a": [
+          62,
+          21,
+          45,
+          69
+        ],
+        "b": [
+          65,
+          62,
+          76,
+          58
+        ],
+        "c": [
+          51,
+          77,
+          59,
+          22
+        ],
+        "k": 55
+      },
+      "expected": 5751,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-14",
+      "input": {
+        "a": [
+          49,
+          78,
+          95,
+          45,
+          82,
+          3,
+          33
+        ],
+        "b": [
+          92,
+          47,
+          60,
+          81,
+          32,
+          100,
+          39
+        ],
+        "c": [
+          72,
+          46,
+          67,
+          69,
+          77,
+          31,
+          15
+        ],
+        "k": 317
+      },
+      "expected": 3015,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    },
+    {
+      "case_id": "abc391_f-15",
+      "input": {
+        "a": [
+          833409360,
+          938932717,
+          325766278,
+          712706010,
+          346003881,
+          121517775,
+          494829996,
+          80157272,
+          847023547,
+          944351777,
+          586581630,
+          212662762,
+          743429934,
+          810548627,
+          637227674,
+          388618581,
+          451314273,
+          371774856,
+          998424032,
+          397556060,
+          655644811,
+          702551815,
+          617051209,
+          630252749,
+          663106465,
+          555591783,
+          375955523,
+          642620493,
+          339624412,
+          650287508,
+          547167600,
+          76868557,
+          519449935,
+          455263703,
+          932093946,
+          375489789,
+          515226956,
+          481681425,
+          505790331,
+          857298264
+        ],
+        "b": [
+          623771996,
+          803166343,
+          719694688,
+          145740165,
+          937582661,
+          74616357,
+          838037918,
+          789202773,
+          623062111,
+          579012790,
+          89654527,
+          275858585,
+          53354516,
+          7794335,
+          249026757,
+          240159825,
+          960722939,
+          162287132,
+          904088578,
+          822093003,
+          661540100,
+          684332508,
+          996138699,
+          292604997,
+          725033681,
+          875431594,
+          376974253,
+          434596421,
+          138155096,
+          61575518,
+          329038920,
+          102103991,
+          996917653,
+          329226531,
+          196908523,
+          623953375,
+          888783827,
+          76155098,
+          689181649,
+          300967557
+        ],
+        "c": [
+          347337401,
+          476652545,
+          802214892,
+          951927745,
+          449441616,
+          494031544,
+          44900600,
+          764407514,
+          331273966,
+          915454254,
+          94606030,
+          37889436,
+          921983718,
+          124527531,
+          559908678,
+          673128560,
+          67860848,
+          682413812,
+          639499726,
+          329918337,
+          567744341,
+          403292981,
+          853599698,
+          727679621,
+          111575099,
+          640623116,
+          853622596,
+          706626445,
+          335455349,
+          308872403,
+          907382178,
+          619720521,
+          933960797,
+          95650909,
+          39577054,
+          632777532,
+          287436936,
+          799314426,
+          114182184,
+          937072761
+        ],
+        "k": 5000
+      },
+      "expected": 1699328283629507431,
+      "provenance": "project-authored; deterministic fixture generator v1"
+    }
+  ],
+  "reference_provenance": "independently authored reference algorithm; validated by independent small-instance oracles and Docker checks",
+  "licensing_note": "Source platform content is not relicensed. Only identifiers/attribution and independently authored adaptations, tests and reference code are packaged. LiveCodeBench card says cc without a variant; no original corpus text or private tests are redistributed."
+}
