@@ -7,3 +7,9 @@
 /results/** -text
 /configs/baseline_v1.toml -text
 /prompts/coding_agent_v1.txt -text
+# Preserve controller/config hashes across checkout platforms.
+/safety_games/** -text
+/scripts/** -text
+/tests/** -text
+/configs/** -text
+/prompts/** -text

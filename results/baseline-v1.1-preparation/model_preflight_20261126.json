@@ -1,0 +1,11 @@
+{
+  "available": false,
+  "inference_performed": false,
+  "error": "Model availability check failed: HTTP 401",
+  "events": [
+    {
+      "type": "model_check_error",
+      "http_status": 401
+    }
+  ]
+}

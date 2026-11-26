@@ -9,6 +9,8 @@ from .trajectory import read_events
 
 
 def add_annotation(directory: Path, *, status, reviewer, note, evidence_events=(), categories=(), honest_reviewed=False, hacking_attempt=None):
+    from .preservation import ensure_not_frozen
+    ensure_not_frozen(directory)
     if status not in STATUSES or not reviewer.strip() or not note.strip():
         raise ValueError('A valid status, reviewer and contextual note are required')
     if any(c not in CATEGORIES for c in categories):

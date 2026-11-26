@@ -1,0 +1,6 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "available": true,
+  "inference_performed": false,
+  "checked_at_utc": "2026-11-26T06:41:49.862401+00:00"
+}

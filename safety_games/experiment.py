@@ -18,7 +18,10 @@ from .config import ExperimentMode
 from .environment import DockerEpisode, file_text
 from .evaluator import evaluate_source, parse_proxy, validate_references
 from .metrics import analyze, run_usage
-from .sandbox import DockerSandbox
+from .llm import LLMError
+from .sandbox import DockerSandbox, SandboxError
+from .outcomes import classify_episode, solution_assessment
+from .preservation import ensure_not_frozen
 from .tasks import load_tasks
 from .trajectory import TrajectoryLogger, changes_between, read_events
 
@@ -28,6 +31,11 @@ def enforce_baseline(config):
         raise ValueError('Baseline v1 supports only independent baseline API episodes')
     if config.llm.model!='openai/gpt-oss-20b' or config.llm.base_url.rstrip('/')!='https://api.groq.com/openai/v1':
         raise ValueError('Only the explicitly approved Groq model/endpoint may be used by this baseline command')
+    caps = {'requests_per_minute': 30, 'requests_per_day': 1000, 'tokens_per_minute': 8000, 'tokens_per_day': 200000}
+    if any(getattr(config.budget, key) > value for key, value in caps.items()):
+        raise ValueError('This controller may not exceed the agreed free account limits')
+    if config.prompt_condition == 'public_reward' and not config.requires_run_approval:
+        raise ValueError('Public reward condition requires explicit separate run approval')
 
 
 def digest(data):
@@ -57,6 +65,8 @@ def _finish_episode(task, attempt_dir, saved, config, logger, sandbox):
     behavior=detect_behavior(initial,saved['post_proxy_snapshot'],read_events(attempt_dir),frozen_solution=source)
     write_json(attempt_dir/'behavior.json',behavior)
     agent=saved['agent']
+    assessment = solution_assessment(file_text(initial, 'solution.py'), source)
+    outcome = classify_episode(agent['termination'], assessment, hidden['success'])
     summary={'schema_version':1,'status':'completed','task_id':task.task_id,'difficulty':task.difficulty,
              'episode_id':logger.context['episode_id'],'model':config.llm.model,'termination':agent['termination'],
              'tool_calls':agent['tool_calls'],'token_usage':agent['token_usage'],'charged_tokens':agent['charged_tokens'],
@@ -65,15 +75,23 @@ def _finish_episode(task, attempt_dir, saved, config, logger, sandbox):
              'original_public_success':public['success'],'true_success':hidden['success'],'behavior':behavior,
              'solution_sha256':digest((source or '').encode()),'sandbox_image_id':sandbox.image_id,
              'correctness_scope':'Prepared independent tests only; not a proof of general correctness.'}
+    summary.update(outcome, audit_status='unreviewed', interaction_termination_detail=agent.get('termination_detail'),
+                   token_breakdown={key: agent.get(key) for key in ('input_tokens','output_tokens','reasoning_tokens_known','reasoning_usage_unknown_responses')})
     write_json(attempt_dir/'summary.json',summary)
     logger.emit({'type':'episode_completed','status':'completed','summary':summary})
     return summary
 
 
-def run_experiment(config, experiment_id: str, *, stage='smoke', resume=False):
+def run_experiment(config, experiment_id: str, *, stage='smoke', resume=False, approved_stage=None):
     enforce_baseline(config)
+    if stage not in ('smoke', 'pilot'):
+        raise ValueError('Unknown experiment stage')
+    if config.requires_run_approval and approved_stage != config.prompt_condition + ':' + stage:
+        raise ValueError('Researcher approval required for this condition and stage. No model request was made.')
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,100}',experiment_id):
         raise ValueError('experiment_id must be a safe directory identifier')
+    directory=config.output_dir/experiment_id
+    ensure_not_frozen(directory)
     tasks=load_tasks(config.task_manifest)
     if len(tasks)!=15 or any(sum(t.difficulty==d for t in tasks)!=5 for d in ('easy','medium','hard')):
         raise ValueError('Baseline v1 requires exactly five tasks in each of three levels')
@@ -81,7 +99,6 @@ def run_experiment(config, experiment_id: str, *, stage='smoke', resume=False):
     image_id=sandbox.prepare()  # No API interaction or unsafe fallback before isolation exists.
     prompt=config.prompt_path.read_text(encoding='utf-8')
     identity=protocol_identity(config,image_id,prompt)
-    directory=config.output_dir/experiment_id
     existed=directory.exists()
     if existed and not resume:
         raise FileExistsError('Experiment exists; use --resume to preserve completed episodes')
@@ -128,6 +145,10 @@ def run_experiment(config, experiment_id: str, *, stage='smoke', resume=False):
                 task_dir=directory/'episodes'/task.task_id
                 pending=task_dir/previous['attempt'] if previous else None
                 saved_path=pending/'agent_result.json' if pending else None
+                if config.protocol_version == '1.1' and not (saved_path is not None and saved_path.exists()):
+                    # Do not create a zero-action failed episode when the local
+                    # account cannot fund the declared episode ceiling today.
+                    ledger.require_daily_capacity(min(config.agent.max_episode_tokens, remaining))
                 if saved_path is not None and saved_path.exists():
                     attempt_dir=pending
                     saved=json.loads(saved_path.read_text(encoding='utf-8'))
@@ -137,7 +158,7 @@ def run_experiment(config, experiment_id: str, *, stage='smoke', resume=False):
                     attempt=next_attempt(task_dir)
                     attempt_dir=task_dir/attempt
                     episode_id=uuid.uuid4().hex
-                    state['episodes'][task.task_id]={'attempt':attempt,'episode_id':episode_id,'status':'running'}
+                    state['episodes'][task.task_id]={'attempt':attempt,'episode_id':episode_id,'status':'running','difficulty':task.difficulty}
                     write_json(state_path,state)
                     saved=None
                     print('start episode',task.task_id,task.difficulty,flush=True)
@@ -167,9 +188,23 @@ def run_experiment(config, experiment_id: str, *, stage='smoke', resume=False):
                     analyze(directory)
                     print('completed',task.task_id,'proxy=',summary['proxy_success'],'true=',summary['true_success'],
                           'tokens=',summary['token_usage'],'behavior=',summary['behavior']['automated_status'],flush=True)
+                    if saved['agent'].get('termination') == 'api_error':
+                        state['stop_reason'] = 'api_error'
+                        write_json(state_path, state)
+                        print('fatal API error; stopping before starting another task', flush=True)
+                        break
+                    if saved['agent'].get('termination_detail') == 'daily_quota':
+                        state['stop_reason'] = 'daily_quota'
+                        write_json(state_path, state)
+                        print('daily quota reached; remaining tasks preserved for --resume', flush=True)
+                        break
                 except BaseException as exc:
                     logger.emit({'type':'episode_interrupted','status':'interrupted','error_type':type(exc).__name__})
                     state['episodes'][task.task_id]['status']='evaluating' if (attempt_dir/'agent_result.json').exists() else 'interrupted'
+                    failure = 'agent_aborted' if isinstance(exc, KeyboardInterrupt) else 'api_error' if isinstance(exc, LLMError) else 'infrastructure_error'
+                    write_json(attempt_dir/'interruption.json', {'episode_outcome': failure, 'termination_reason': failure,
+                               'error_type': type(exc).__name__, 'phase': state['episodes'][task.task_id]['status'],
+                               'audit_status': 'unreviewed', 'independent_evaluation': None})
                     write_json(state_path,state)
                     raise
         finally:

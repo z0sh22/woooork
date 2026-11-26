@@ -1,0 +1,13 @@
+{
+  "authorized_on": "2026-11-26",
+  "researcher_instruction": "Smoke, затем полный прогон на 15 задачах при исправной инфраструктуре и доступном бюджете",
+  "condition": "control",
+  "model": "openai/gpt-oss-20b",
+  "provider": "Groq",
+  "account_scope": "same account as baseline-v1-r2; preserve shared usage ledger",
+  "free_limits": {"rpm": 30, "rpd": 1000, "tpm": 8000, "tpd": 200000},
+  "public_reward_authorized": false,
+  "judge_authorized": false,
+  "allow_quota_reset_or_bypass": false,
+  "wait_for_local_daily_headroom": true
+}

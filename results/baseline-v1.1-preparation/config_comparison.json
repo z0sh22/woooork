@@ -1,0 +1,202 @@
+{
+  "old_config": {
+    "name": "baseline-v1.0",
+    "mode": "baseline",
+    "rounds": 15,
+    "seed": 0,
+    "output_dir": "results",
+    "llm": {
+      "backend": "api",
+      "model": "openai/gpt-oss-20b",
+      "temperature": 0.2,
+      "max_output_tokens": 2048,
+      "timeout_s": 60.0,
+      "api_key_env": "GROQ_API_KEY",
+      "base_url": "https://api.groq.com/openai/v1",
+      "reasoning_effort": "medium",
+      "max_retries": 3,
+      "groq_channel_workaround": true,
+      "adaptive_output_budget": false,
+      "min_output_tokens": 512,
+      "request_token_margin": 256
+    },
+    "sandbox": {
+      "image": "safety-games-sandbox:local",
+      "timeout_s": 8.0,
+      "memory_mb": 256,
+      "cpus": 1.0,
+      "pids_limit": 32,
+      "tmpfs_mb": 32,
+      "max_output_bytes": 65536,
+      "max_source_bytes": 262144,
+      "max_stdin_bytes": 262144
+    },
+    "agent": {
+      "max_tool_calls": 15,
+      "max_steps": 20,
+      "episode_timeout_s": 900.0,
+      "max_episode_tokens": 24000,
+      "max_input_estimate": 5500,
+      "tool_feedback_chars": 3000,
+      "command_timeout_s": 15.0,
+      "max_workspace_bytes": 1048576,
+      "max_workspace_files": 64,
+      "max_tool_parse_errors": 2,
+      "max_output_continuations": 0
+    },
+    "budget": {
+      "requests_per_minute": 30,
+      "requests_per_day": 1000,
+      "tokens_per_minute": 8000,
+      "tokens_per_day": 200000,
+      "experiment_token_limit": 180000,
+      "daily_token_headroom": 0
+    },
+    "task_manifest": "data\\manifest.json",
+    "prompt_path": "prompts\\coding_agent_v1.txt",
+    "protocol_version": "1.0",
+    "prompt_condition": "control",
+    "requires_run_approval": false
+  },
+  "proposed_config": {
+    "name": "baseline-v1.1-control",
+    "mode": "baseline",
+    "rounds": 15,
+    "seed": 0,
+    "output_dir": "results",
+    "llm": {
+      "backend": "api",
+      "model": "openai/gpt-oss-20b",
+      "temperature": 0.2,
+      "max_output_tokens": 6144,
+      "timeout_s": 120.0,
+      "api_key_env": "GROQ_API_KEY",
+      "base_url": "https://api.groq.com/openai/v1",
+      "reasoning_effort": "medium",
+      "max_retries": 3,
+      "groq_channel_workaround": true,
+      "adaptive_output_budget": true,
+      "min_output_tokens": 1024,
+      "request_token_margin": 256
+    },
+    "sandbox": {
+      "image": "safety-games-sandbox:local",
+      "timeout_s": 8.0,
+      "memory_mb": 256,
+      "cpus": 1.0,
+      "pids_limit": 32,
+      "tmpfs_mb": 32,
+      "max_output_bytes": 65536,
+      "max_source_bytes": 262144,
+      "max_stdin_bytes": 262144
+    },
+    "agent": {
+      "max_tool_calls": 25,
+      "max_steps": 40,
+      "episode_timeout_s": 1800.0,
+      "max_episode_tokens": 60000,
+      "max_input_estimate": 6400,
+      "tool_feedback_chars": 3000,
+      "command_timeout_s": 15.0,
+      "max_workspace_bytes": 1048576,
+      "max_workspace_files": 64,
+      "max_tool_parse_errors": 6,
+      "max_output_continuations": 2
+    },
+    "budget": {
+      "requests_per_minute": 30,
+      "requests_per_day": 1000,
+      "tokens_per_minute": 8000,
+      "tokens_per_day": 200000,
+      "experiment_token_limit": 900000,
+      "daily_token_headroom": 20000
+    },
+    "task_manifest": "data\\manifest.json",
+    "prompt_path": "prompts\\coding_agent_v1.txt",
+    "protocol_version": "1.1",
+    "prompt_condition": "control",
+    "requires_run_approval": true
+  },
+  "changes": [
+    {
+      "parameter": "agent.episode_timeout_s",
+      "old": 900.0,
+      "proposed": 1800.0
+    },
+    {
+      "parameter": "agent.max_episode_tokens",
+      "old": 24000,
+      "proposed": 60000
+    },
+    {
+      "parameter": "agent.max_input_estimate",
+      "old": 5500,
+      "proposed": 6400
+    },
+    {
+      "parameter": "agent.max_output_continuations",
+      "old": 0,
+      "proposed": 2
+    },
+    {
+      "parameter": "agent.max_steps",
+      "old": 20,
+      "proposed": 40
+    },
+    {
+      "parameter": "agent.max_tool_calls",
+      "old": 15,
+      "proposed": 25
+    },
+    {
+      "parameter": "agent.max_tool_parse_errors",
+      "old": 2,
+      "proposed": 6
+    },
+    {
+      "parameter": "budget.daily_token_headroom",
+      "old": 0,
+      "proposed": 20000
+    },
+    {
+      "parameter": "budget.experiment_token_limit",
+      "old": 180000,
+      "proposed": 900000
+    },
+    {
+      "parameter": "llm.adaptive_output_budget",
+      "old": false,
+      "proposed": true
+    },
+    {
+      "parameter": "llm.max_output_tokens",
+      "old": 2048,
+      "proposed": 6144
+    },
+    {
+      "parameter": "llm.min_output_tokens",
+      "old": 512,
+      "proposed": 1024
+    },
+    {
+      "parameter": "llm.timeout_s",
+      "old": 60.0,
+      "proposed": 120.0
+    },
+    {
+      "parameter": "name",
+      "old": "baseline-v1.0",
+      "proposed": "baseline-v1.1-control"
+    },
+    {
+      "parameter": "protocol_version",
+      "old": "1.0",
+      "proposed": "1.1"
+    },
+    {
+      "parameter": "requires_run_approval",
+      "old": false,
+      "proposed": true
+    }
+  ]
+}

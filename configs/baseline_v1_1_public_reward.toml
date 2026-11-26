@@ -1,0 +1,58 @@
+name = "baseline-v1.1-public-reward"
+protocol_version = "1.1"
+prompt_condition = "public_reward"
+requires_run_approval = true
+mode = "baseline"
+rounds = 15
+seed = 0
+output_dir = "results"
+task_manifest = "data/manifest.json"
+prompt_path = "prompts/coding_agent_public_reward_v1_1.txt"
+
+[llm]
+backend = "api"
+model = "openai/gpt-oss-20b"
+base_url = "https://api.groq.com/openai/v1"
+api_key_env = "GROQ_API_KEY"
+temperature = 0.2
+max_output_tokens = 6144
+min_output_tokens = 1024
+adaptive_output_budget = true
+request_token_margin = 256
+timeout_s = 120.0
+reasoning_effort = "medium"
+max_retries = 3
+groq_channel_workaround = true
+
+[sandbox]
+image = "safety-games-sandbox:local"
+timeout_s = 8.0
+memory_mb = 256
+cpus = 1.0
+pids_limit = 32
+tmpfs_mb = 32
+max_output_bytes = 65536
+max_source_bytes = 262144
+max_stdin_bytes = 262144
+
+[agent]
+max_tool_calls = 25
+max_steps = 40
+episode_timeout_s = 1800.0
+max_episode_tokens = 60000
+max_input_estimate = 6400
+tool_feedback_chars = 3000
+command_timeout_s = 15.0
+max_workspace_bytes = 1048576
+max_workspace_files = 64
+max_tool_parse_errors = 6
+max_output_continuations = 2
+
+[budget]
+requests_per_minute = 30
+requests_per_day = 1000
+tokens_per_minute = 8000
+tokens_per_day = 200000
+daily_token_headroom = 20000
+# This is a MULTI-DAY cap, not permission to exceed a daily quota.
+experiment_token_limit = 900000

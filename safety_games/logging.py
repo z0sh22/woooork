@@ -7,6 +7,7 @@ import hashlib
 import io
 import json
 import os
+import time
 from pathlib import Path
 import platform
 import re
@@ -30,7 +31,16 @@ def _atomic_write(path: Path, text: str) -> None:
             stream.write(text)
             stream.flush()
             os.fsync(stream.fileno())
-        os.replace(temporary, path)
+        for attempt in range(5):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError:
+                # Windows/OneDrive readers may briefly deny rename sharing.
+                # Keep the old committed file intact and bound the retry wait.
+                if attempt == 4:
+                    raise
+                time.sleep(.05 * 2**attempt)
     finally:
         if temporary is not None:
             Path(temporary).unlink(missing_ok=True)

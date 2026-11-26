@@ -1,12 +1,49 @@
-# Submission checkpoint
+# Продолжение Baseline v1.1 — 26 ноября 2026
 
-Restored Baseline v1.0 from results/protocol_archives/r2 at the user request.
-All v1.0 scientific results remain unchanged. No new LLM experiments were started.
+Пользователь разрешил контрольный smoke на трёх задачах, затем исходные 15 при исправной инфраструктуре и доступном бесплатном бюджете. Прежняя модель Groq, исходный промпт/задачи/тесты. Публичная награда, модель-судья, санкции, память и обучение не разрешались. Повторно спрашивать согласование уже разрешённого плана не требуется.
 
-Unfinished v1.1 Stage A work and its reports are preserved locally in
-exports/v1.1-before-rollback-20261125.zip (verified backup; excluded from Git).
-The v1.1 preparation results also remain in results/baseline-v1.1-preparation.
-Resume that work only when requested. Smoke/pilot/judge calls require separate approval.
+V1.1 восстановлена из `exports/v1.1-before-rollback-20261125.zip`; ветка `baseline-v1.1`. В main остаётся v1.0, коммит `8fbed519a1cee612b7ce553660f61fb44cfd6a61`, репозиторий `https://github.com/z0sh22/woooork`. Не изменять старые результаты, задачи, конфигурацию и промпт.
 
-GitHub target authorized by user: https://github.com/z0sh22/woooork.
-Do not force push or publish .env, caches, virtual environments or user PDFs.
+## Сначала проверить очередь
+
+Статус/PID: `results/baseline-v1-1-control-plan-20261126/status.json`. Вывод — `controller.stdout.log` и `controller.stderr.log` там же. Первым действием новой сессии прочитать статус и проверить PID. Не редактировать Python/протокол при живой очереди: перед запуском runner сравнивает отпечатки и останавливается при несовпадении.
+
+Реальные данные после начала генераций: `results/baseline-v1-1-control-20261126`. Пока идёт ожидание квоты, научных наблюдений там может не быть. Не заполнять отсутствующее синтетикой. Контроллер сохраняет JSONL/Markdown/CSV после каждого эпизода; в папке плана — smoke checkpoint/gate.
+
+Продолжение после остановки (сначала убедиться, что прежний PID не работает; устаревшие locks удалять только после проверки):
+
+```powershell
+.\.venv\Scripts\python.exe scripts/run_control_plan.py --experiment-id baseline-v1-1-control-20261126 --plan-dir results/baseline-v1-1-control-plan-20261126 --approved-control-smoke-and-pilot --max-wait-hours 24
+```
+
+24 часа ограничивают ожидание одного запуска runner. После истечения состояние сохраняется. Завершённые эпизоды не переигрываются. При изменении кода/образа нужен новый ID и разделение наблюдений. Gate проверяет работоспособность контроллера и оценивания, не отбирает результаты по успешности алгоритма, хакингу или наличию реализации.
+
+## Авторизация и квота
+
+Первый запрос списка моделей вернул 401. После обновления `.env` пользователем проверка успешно прошла в 06:41:49 UTC. Значения ключей не выводились; в sandbox ключей нет. Пользователь подтвердил прежний аккаунт: новый ключ не сбрасывает общий `results/.api_budget.json`.
+
+На момент проверки старый ledger: 120 попыток, 182290 учтённых токенов за последние 24h с неизвестными резервами. Защитный предел v1.1 — 180000/скользящие 24h, на новый эпизод требуется запас 60000. Первое локальное окно — примерно **26 ноября в 19:50:17 МСК**, пересчитывается из журнала. Это не подтверждённое время сброса TPD у Groq. Пользователь не нашёл расход в консоли; не выдумывать новый баланс и не обнулять ledger.
+
+Квоты 30 RPM, 1000 RPD, 8000 TPM, 200000 TPD. Реальный usage, reasoning как подмножество output и неизвестные резервы раздельны. Retry-After/429 обязательны. На полный набор может не хватить одного дня; сохранить реальные частичные данные.
+
+## Docker и тесты
+
+Образ был виден в image ls, но не открывался inspect. Помогла упаковка без provenance index:
+
+```powershell
+docker build --provenance=false --load --tag safety-games-sandbox:local sandbox
+```
+
+Dockerfile, базовый digest, seccomp и ограничения не ослаблены. Не исполнять решения на host и не пересобирать образ при живом эксперименте без проверки протокола.
+
+Итоговые тесты: `results/baseline-v1.1-preparation/infrastructure_tests_20261126_ready.json`. Неуспешные отчёты сохранены отдельно. Проверка 893 старых файлов: `python scripts/prepare_v1_1.py`. Есть 15 audit cards/CSV, Wilson CI, профили задач, будущий интерфейс судьи без API.
+
+## После новых данных
+
+1. Проверить smoke/gate, лимиты и траектории. Не чинить алгоритмы за модель и не менять настройки ради результата.
+2. Считать все planned и technical-completed subset раздельно; отсутствие флагов не доказывает честность.
+3. Ручной аудит v1.0 ещё 0/15; материалы в `results/baseline-v1.1-preparation/review`. Не писать в старый run.
+4. Не делать причинных выводов по пяти задачам на уровень; source/difficulty смешаны, тесты конечны. Калибровка — отдельное будущее исследование.
+5. Обновить отчёт/графики, проверить секреты и закоммитить новые артефакты. Очередь сама Git не обновляет.
+
+Документы: `docs/baseline_v1_1_execution.md`, `docs/baseline_v1_1_protocol.md`, `docs/task_calibration_proposal.md`. Прежние 10/15 — результаты v1.0, не новые результаты v1.1.

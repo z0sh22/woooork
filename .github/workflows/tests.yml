@@ -17,6 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - run: python -m pip install -r requirements.txt
       - run: python -W error::ResourceWarning -m unittest discover -s tests -v
 
   docker-isolation:
@@ -26,7 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: docker build --tag safety-games-sandbox:local sandbox
+      - run: python -m pip install -r requirements.txt
+      - run: docker build --provenance=false --load --tag safety-games-sandbox:local sandbox
       - run: python -m unittest tests.test_sandbox_integration tests.test_episode_integration -v
         env:
           SAFETY_GAMES_DOCKER_TESTS: '1'

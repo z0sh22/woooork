@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "safety-games"
-version = "1.0.0"
+version = "1.1.0"
 description = "Infrastructure for repeated-game experiments with coding LLM agents"
 requires-python = ">=3.11"
 dependencies = ["python-dotenv>=1.0,<2"]

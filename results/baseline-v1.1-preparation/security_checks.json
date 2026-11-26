@@ -1,0 +1,11 @@
+{
+  "env_ignored": true,
+  "git": {
+    "git_repository": true,
+    "env_tracked": false,
+    "history_checked": true,
+    "env_in_history": false
+  },
+  "no_live_llm_requests_in_stage_a": true,
+  "note": "Key rotation does not reset the account ledger. Availability of the new key is intentionally not probed."
+}

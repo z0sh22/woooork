@@ -99,6 +99,14 @@ class APITests(unittest.TestCase):
         self.assertFalse(self.client(opener).check_model()['inference_performed'])
         self.assertIsNone(opener.requests[0].data)
 
+    def test_model_probe_auth_failure_exposes_status_without_secret(self):
+        error=urllib.error.HTTPError('https://fixture.invalid',401,'unauthorized',{},io.BytesIO(b'test-secret-key'))
+        with self.assertRaisesRegex(LLMError,'HTTP 401'):
+            self.client(Opener(error)).check_model()
+        self.assertEqual(self.events,[{'type':'model_check_error','http_status':401}])
+        self.assertNotIn('test-secret-key',json.dumps(self.events))
+        self.assertFalse(self.path.exists())
+
     def test_groq_workaround_is_explicit_and_keeps_only_function_definitions(self):
         opener=Opener(completion());client=self.client(opener)
         client.config=replace(client.config,groq_channel_workaround=True)

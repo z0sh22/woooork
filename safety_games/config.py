@@ -50,6 +50,9 @@ class LLMConfig:
     reasoning_effort: str = "medium"
     max_retries: int = 3
     groq_channel_workaround: bool = False
+    adaptive_output_budget: bool = False
+    min_output_tokens: int = 512
+    request_token_margin: int = 256
 
     def __post_init__(self) -> None:
         if self.backend not in ("api", "local"):
@@ -64,6 +67,12 @@ class LLMConfig:
         require_number("llm.max_retries", self.max_retries, minimum=0, maximum=5, integer=True)
         if type(self.groq_channel_workaround) is not bool:
             raise ConfigError('llm.groq_channel_workaround must be boolean')
+        if type(self.adaptive_output_budget) is not bool:
+            raise ConfigError('llm.adaptive_output_budget must be boolean')
+        require_number('llm.min_output_tokens', self.min_output_tokens, minimum=1, integer=True)
+        require_number('llm.request_token_margin', self.request_token_margin, minimum=0, integer=True)
+        if self.adaptive_output_budget and self.min_output_tokens > self.max_output_tokens:
+            raise ConfigError('min_output_tokens must not exceed max_output_tokens in adaptive mode')
         if self.api_key_env is not None:
             if not isinstance(self.api_key_env, str) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", self.api_key_env):
                 raise ConfigError("llm.api_key_env must be an environment variable name")
@@ -106,11 +115,12 @@ class AgentConfig:
     max_workspace_bytes: int = 1048576
     max_workspace_files: int = 64
     max_tool_parse_errors: int = 2
+    max_output_continuations: int = 0
 
     def __post_init__(self) -> None:
         for item in fields(self):
             value = getattr(self, item.name)
-            require_number(f"agent.{item.name}", value, minimum=1, integer=type(item.default) is int)
+            require_number(f"agent.{item.name}", value, minimum=0 if item.name == 'max_output_continuations' else 1, integer=type(item.default) is int)
 
 
 @dataclass(frozen=True)
@@ -120,12 +130,13 @@ class APIBudgetConfig:
     tokens_per_minute: int = 8000
     tokens_per_day: int = 200000
     experiment_token_limit: int = 180000
+    daily_token_headroom: int = 0
 
     def __post_init__(self) -> None:
         for item in fields(self):
-            require_number(f"budget.{item.name}", getattr(self, item.name), minimum=1, integer=True)
-        if self.experiment_token_limit > self.tokens_per_day:
-            raise ConfigError("experiment_token_limit must not exceed daily token limit")
+            require_number(f"budget.{item.name}", getattr(self, item.name), minimum=0 if item.name == 'daily_token_headroom' else 1, integer=True)
+        if self.daily_token_headroom >= self.tokens_per_day:
+            raise ConfigError('daily_token_headroom must leave a positive daily budget')
 
 
 @dataclass(frozen=True)
@@ -141,9 +152,16 @@ class ExperimentConfig:
     budget: APIBudgetConfig = field(default_factory=APIBudgetConfig)
     task_manifest: Path = Path("data/manifest.json")
     prompt_path: Path = Path("prompts/coding_agent_v1.txt")
+    protocol_version: str = '1.0'
+    prompt_condition: str = 'control'
+    requires_run_approval: bool = False
 
     def __post_init__(self) -> None:
         require_text("name", self.name)
+        if self.protocol_version not in ('1.0', '1.1') or self.prompt_condition not in ('control', 'public_reward'):
+            raise ConfigError('Unsupported protocol_version or prompt_condition')
+        if type(self.requires_run_approval) is not bool:
+            raise ConfigError('requires_run_approval must be boolean')
         try:
             object.__setattr__(self, "mode", ExperimentMode(self.mode))
         except (ValueError, TypeError) as exc:
@@ -157,6 +175,8 @@ class ExperimentConfig:
             raise ConfigError("llm and sandbox must be validated configuration objects")
         if not isinstance(self.agent, AgentConfig) or not isinstance(self.budget, APIBudgetConfig):
             raise ConfigError("agent and budget must be validated configuration objects")
+        if self.llm.adaptive_output_budget and self.agent.max_input_estimate + self.llm.min_output_tokens + self.llm.request_token_margin > self.budget.tokens_per_minute:
+            raise ConfigError('Input limit, minimum output and margin must fit TPM')
         for name in ("task_manifest", "prompt_path"):
             value = getattr(self, name)
             if not isinstance(value, (str, Path)) or not str(value).strip():

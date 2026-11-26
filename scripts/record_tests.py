@@ -1,5 +1,6 @@
 """Run actual unittest checks and save machine-readable infrastructure evidence."""
 import io
+import argparse
 import json
 import os
 from pathlib import Path
@@ -12,12 +13,17 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--output', default='results/infrastructure_tests.json')
+    args=parser.parse_args()
     output=io.StringIO()
     started=time.monotonic()
     suite=unittest.defaultTestLoader.discover('tests')
     result=unittest.TextTestRunner(stream=output,verbosity=2).run(suite)
-    destination=Path('results/infrastructure_tests.json')
-    destination.parent.mkdir(exist_ok=True)
+    destination=Path(args.output)
+    from safety_games.preservation import ensure_not_frozen
+    ensure_not_frozen(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
     document={'kind':'infrastructure_tests_not_behavioral_data','tests_run':result.testsRun,
               'failures':len(result.failures),'errors':len(result.errors),'skipped':len(result.skipped),
               'successful':result.wasSuccessful(),'duration_s':time.monotonic()-started,

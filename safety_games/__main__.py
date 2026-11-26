@@ -1,4 +1,4 @@
-"""Infrastructure checks; deliberately no experiment runner or agent prompts."""
+"""Controller CLI. v1.1 experiment stages require explicit operator approval."""
 
 import argparse
 from dataclasses import asdict
@@ -14,13 +14,21 @@ def main(argv: list[str] | None = None) -> int:
     commands = parser.add_subparsers(dest="command", required=True)
     for command in ("check-config", "sandbox-check", "api-check", "validate-tasks", "run"):
         subparser = commands.add_parser(command)
-        subparser.add_argument("--config", default="configs/baseline.toml" if command in ('check-config','sandbox-check') else "configs/baseline_v1.toml")
+        subparser.add_argument("--config", default="configs/baseline.toml" if command in ('check-config','sandbox-check') else "configs/baseline_v1_1.toml" if command == 'run' else "configs/baseline_v1.toml")
         if command=='run':
             subparser.add_argument('--experiment-id',required=True)
             subparser.add_argument('--stage',choices=('smoke','pilot'),default='smoke')
             subparser.add_argument('--resume',action='store_true')
+            subparser.add_argument('--approved-stage', choices=('control:smoke','control:pilot','public_reward:smoke','public_reward:pilot'))
     analyze_parser=commands.add_parser('analyze')
     analyze_parser.add_argument('directory')
+    analyze_parser.add_argument('--output')
+    prepare_parser = commands.add_parser('prepare-review')
+    prepare_parser.add_argument('directory')
+    prepare_parser.add_argument('--output', required=True)
+    archive_parser = commands.add_parser('archive')
+    archive_parser.add_argument('--output', required=True)
+    archive_parser.add_argument('--root', default='.')
     audit_parser=commands.add_parser('audit')
     audit_parser.add_argument('episode_directory')
     audit_parser.add_argument('--status',required=True)
@@ -33,9 +41,15 @@ def main(argv: list[str] | None = None) -> int:
     try:
         from pathlib import Path
         from .api import LLMError
+        if arguments.command == 'prepare-review':
+            from .review import prepare_review
+            print(json.dumps(prepare_review(Path(arguments.directory), Path(arguments.output)), ensure_ascii=False, indent=2));return 0
+        if arguments.command == 'archive':
+            from .archive import create_research_archive
+            print(json.dumps(create_research_archive(Path(arguments.root), Path(arguments.output)), ensure_ascii=False, indent=2));return 0
         if arguments.command=='analyze':
             from .metrics import analyze
-            print(json.dumps(analyze(arguments.directory),ensure_ascii=False,indent=2));return 0
+            print(json.dumps(analyze(arguments.directory, arguments.output),ensure_ascii=False,indent=2));return 0
         if arguments.command=='audit':
             from .audit import add_annotation
             add_annotation(Path(arguments.episode_directory),status=arguments.status,reviewer=arguments.reviewer,note=arguments.note,
@@ -58,7 +72,7 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if arguments.command=='run':
             from .experiment import run_experiment
-            print(run_experiment(config,arguments.experiment_id,stage=arguments.stage,resume=arguments.resume));return 0
+            print(run_experiment(config,arguments.experiment_id,stage=arguments.stage,resume=arguments.resume,approved_stage=arguments.approved_stage));return 0
         result = DockerSandbox(config.sandbox).run('print("sandbox-ok")')
         print(json.dumps(asdict(result), ensure_ascii=False, indent=2))
         return 0 if result.status is ExecutionStatus.OK and result.stdout == "sandbox-ok\n" else 1

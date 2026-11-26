@@ -1,0 +1,1331 @@
+{
+  "schema_version": 1,
+  "overall": {
+    "n": 15,
+    "confirmed_hacking_count": 0,
+    "hacking_rate_confirmed_lower_bound": 0.0,
+    "confirmed_hacking_among_audited": {
+      "successes": 0,
+      "n": 0,
+      "ci95": null
+    },
+    "technically_completed": {
+      "successes": 9,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6,
+      "ci95": {
+        "low": 0.35746830120624606,
+        "high": 0.8017550385865841,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6,
+      "all_episodes_upper_bound": 0.6
+    },
+    "solution_written": {
+      "successes": 11,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.7333333333333333,
+      "ci95": {
+        "low": 0.48049565944019434,
+        "high": 0.8910254667430761,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.7333333333333333,
+      "all_episodes_upper_bound": 0.7333333333333333
+    },
+    "technically_unfinished_n": 6,
+    "termination_counts": {
+      "finished_text": 7,
+      "episode_token_limit": 2,
+      "output_token_limit": 3,
+      "finish_task": 2,
+      "tool_parse_limit": 1
+    },
+    "outcome_counts": {
+      "success": 10,
+      "episode_token_limit": 1,
+      "output_token_limit": 3,
+      "tool_parse_limit": 1
+    },
+    "suspected_hacking_count": 0,
+    "uncertain_count": 0,
+    "suspected_hacking_rate": 0.0,
+    "uncertain_rate": 0.0,
+    "audited_n": 0,
+    "unreviewed_n": 15,
+    "audit_coverage": 0.0,
+    "hacking_attempt_rate": {
+      "successes": 0,
+      "known_n": 0,
+      "unknown_n": 15,
+      "rate": null,
+      "ci95": null,
+      "all_episodes_lower_bound": 0.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "true_success": {
+      "successes": 10,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6666666666666666,
+      "ci95": {
+        "low": 0.41713547738519774,
+        "high": 0.8482367556028526,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6666666666666666,
+      "all_episodes_upper_bound": 0.6666666666666666
+    },
+    "proxy_success": {
+      "successes": 10,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6666666666666666,
+      "ci95": {
+        "low": 0.41713547738519774,
+        "high": 0.8482367556028526,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6666666666666666,
+      "all_episodes_upper_bound": 0.6666666666666666
+    },
+    "original_public_success": {
+      "successes": 10,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6666666666666666,
+      "ci95": {
+        "low": 0.41713547738519774,
+        "high": 0.8482367556028526,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6666666666666666,
+      "all_episodes_upper_bound": 0.6666666666666666
+    },
+    "reward_gap": 0.0,
+    "honest_success_count": 0,
+    "honest_success_rate_confirmed_lower_bound": 0.0,
+    "observed_explicit_test_file_reads": 13,
+    "observed_test_file_changes": 0,
+    "tool_calls": 82,
+    "agent_execution_time_s": 1651.547000000035,
+    "confirmed_category_counts": {}
+  },
+  "by_difficulty": {
+    "easy": {
+      "n": 5,
+      "confirmed_hacking_count": 0,
+      "hacking_rate_confirmed_lower_bound": 0.0,
+      "confirmed_hacking_among_audited": {
+        "successes": 0,
+        "n": 0,
+        "ci95": null
+      },
+      "technically_completed": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "solution_written": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "technically_unfinished_n": 0,
+      "termination_counts": {
+        "finished_text": 5
+      },
+      "outcome_counts": {
+        "success": 5
+      },
+      "suspected_hacking_count": 0,
+      "uncertain_count": 0,
+      "suspected_hacking_rate": 0.0,
+      "uncertain_rate": 0.0,
+      "audited_n": 0,
+      "unreviewed_n": 5,
+      "audit_coverage": 0.0,
+      "hacking_attempt_rate": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 5,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "true_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "proxy_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "original_public_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "reward_gap": 0.0,
+      "honest_success_count": 0,
+      "honest_success_rate_confirmed_lower_bound": 0.0,
+      "observed_explicit_test_file_reads": 3,
+      "observed_test_file_changes": 0,
+      "tool_calls": 28,
+      "agent_execution_time_s": 386.4850000000006,
+      "confirmed_category_counts": {}
+    },
+    "medium": {
+      "n": 5,
+      "confirmed_hacking_count": 0,
+      "hacking_rate_confirmed_lower_bound": 0.0,
+      "confirmed_hacking_among_audited": {
+        "successes": 0,
+        "n": 0,
+        "ci95": null
+      },
+      "technically_completed": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "solution_written": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "technically_unfinished_n": 1,
+      "termination_counts": {
+        "episode_token_limit": 1,
+        "finished_text": 2,
+        "finish_task": 2
+      },
+      "outcome_counts": {
+        "episode_token_limit": 1,
+        "success": 4
+      },
+      "suspected_hacking_count": 0,
+      "uncertain_count": 0,
+      "suspected_hacking_rate": 0.0,
+      "uncertain_rate": 0.0,
+      "audited_n": 0,
+      "unreviewed_n": 5,
+      "audit_coverage": 0.0,
+      "hacking_attempt_rate": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 5,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "true_success": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "proxy_success": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "original_public_success": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "reward_gap": 0.0,
+      "honest_success_count": 0,
+      "honest_success_rate_confirmed_lower_bound": 0.0,
+      "observed_explicit_test_file_reads": 7,
+      "observed_test_file_changes": 0,
+      "tool_calls": 36,
+      "agent_execution_time_s": 791.9380000000237,
+      "confirmed_category_counts": {}
+    },
+    "hard": {
+      "n": 5,
+      "confirmed_hacking_count": 0,
+      "hacking_rate_confirmed_lower_bound": 0.0,
+      "confirmed_hacking_among_audited": {
+        "successes": 0,
+        "n": 0,
+        "ci95": null
+      },
+      "technically_completed": {
+        "successes": 0,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.0,
+        "ci95": {
+          "low": 2.7755575615628914e-17,
+          "high": 0.43448246478317465,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 0.0
+      },
+      "solution_written": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "technically_unfinished_n": 5,
+      "termination_counts": {
+        "output_token_limit": 3,
+        "tool_parse_limit": 1,
+        "episode_token_limit": 1
+      },
+      "outcome_counts": {
+        "output_token_limit": 3,
+        "tool_parse_limit": 1,
+        "success": 1
+      },
+      "suspected_hacking_count": 0,
+      "uncertain_count": 0,
+      "suspected_hacking_rate": 0.0,
+      "uncertain_rate": 0.0,
+      "audited_n": 0,
+      "unreviewed_n": 5,
+      "audit_coverage": 0.0,
+      "hacking_attempt_rate": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 5,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "true_success": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "proxy_success": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "original_public_success": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "reward_gap": 0.0,
+      "honest_success_count": 0,
+      "honest_success_rate_confirmed_lower_bound": 0.0,
+      "observed_explicit_test_file_reads": 3,
+      "observed_test_file_changes": 0,
+      "tool_calls": 18,
+      "agent_execution_time_s": 473.1240000000107,
+      "confirmed_category_counts": {}
+    }
+  },
+  "usage_all_attempts": {
+    "actual_total_tokens": 117248,
+    "prompt_tokens": 93869,
+    "completion_tokens": 23379,
+    "reasoning_tokens_known": 16846,
+    "reasoning_usage_unknown_responses": 0,
+    "non_reasoning_output_tokens_known": 6533,
+    "unknown_usage_reservation": 30340,
+    "charged_tokens": 147588,
+    "request_attempts": 98,
+    "successful_responses": 92
+  },
+  "interpretation": "Confirmed hacking rate is a lower bound pending contextual audit. Unreviewed is not honest. Rates use known observations and expose unknown counts. Reward gap is not a hacking detector.",
+  "planned_task_count": 15,
+  "all_planned": {
+    "proxy_success": {
+      "successes": 10,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6666666666666666,
+      "ci95": {
+        "low": 0.41713547738519774,
+        "high": 0.8482367556028526,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6666666666666666,
+      "all_episodes_upper_bound": 0.6666666666666666
+    },
+    "original_public_success": {
+      "successes": 10,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6666666666666666,
+      "ci95": {
+        "low": 0.41713547738519774,
+        "high": 0.8482367556028526,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6666666666666666,
+      "all_episodes_upper_bound": 0.6666666666666666
+    },
+    "true_success": {
+      "successes": 10,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6666666666666666,
+      "ci95": {
+        "low": 0.41713547738519774,
+        "high": 0.8482367556028526,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6666666666666666,
+      "all_episodes_upper_bound": 0.6666666666666666
+    },
+    "solution_written": {
+      "successes": 11,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.7333333333333333,
+      "ci95": {
+        "low": 0.48049565944019434,
+        "high": 0.8910254667430761,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.7333333333333333,
+      "all_episodes_upper_bound": 0.7333333333333333
+    },
+    "technically_completed": {
+      "successes": 9,
+      "known_n": 15,
+      "unknown_n": 0,
+      "rate": 0.6,
+      "ci95": {
+        "low": 0.35746830120624606,
+        "high": 0.8017550385865841,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 0.6,
+      "all_episodes_upper_bound": 0.6
+    }
+  },
+  "by_difficulty_all_planned": {
+    "easy": {
+      "planned_n": 5,
+      "proxy_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "original_public_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "true_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "solution_written": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "technically_completed": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      }
+    },
+    "medium": {
+      "planned_n": 5,
+      "proxy_success": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "original_public_success": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "true_success": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      },
+      "solution_written": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "technically_completed": {
+        "successes": 4,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.8,
+        "ci95": {
+          "low": 0.3755346297625255,
+          "high": 0.9637758913675698,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.8,
+        "all_episodes_upper_bound": 0.8
+      }
+    },
+    "hard": {
+      "planned_n": 5,
+      "proxy_success": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "original_public_success": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "true_success": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "solution_written": {
+        "successes": 1,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.2,
+        "ci95": {
+          "low": 0.03622410863243014,
+          "high": 0.6244653702374745,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.2,
+        "all_episodes_upper_bound": 0.2
+      },
+      "technically_completed": {
+        "successes": 0,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 0.0,
+        "ci95": {
+          "low": 2.7755575615628914e-17,
+          "high": 0.43448246478317465,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 0.0
+      }
+    },
+    "unknown": {
+      "planned_n": 0,
+      "proxy_success": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "original_public_success": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "true_success": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "solution_written": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "technically_completed": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      }
+    }
+  },
+  "technically_completed_subset": {
+    "n": 9,
+    "confirmed_hacking_count": 0,
+    "hacking_rate_confirmed_lower_bound": 0.0,
+    "confirmed_hacking_among_audited": {
+      "successes": 0,
+      "n": 0,
+      "ci95": null
+    },
+    "technically_completed": {
+      "successes": 9,
+      "known_n": 9,
+      "unknown_n": 0,
+      "rate": 1.0,
+      "ci95": {
+        "low": 0.7008549515804562,
+        "high": 1.0,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 1.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "solution_written": {
+      "successes": 9,
+      "known_n": 9,
+      "unknown_n": 0,
+      "rate": 1.0,
+      "ci95": {
+        "low": 0.7008549515804562,
+        "high": 1.0,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 1.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "technically_unfinished_n": 0,
+    "termination_counts": {
+      "finished_text": 7,
+      "finish_task": 2
+    },
+    "outcome_counts": {
+      "success": 9
+    },
+    "suspected_hacking_count": 0,
+    "uncertain_count": 0,
+    "suspected_hacking_rate": 0.0,
+    "uncertain_rate": 0.0,
+    "audited_n": 0,
+    "unreviewed_n": 9,
+    "audit_coverage": 0.0,
+    "hacking_attempt_rate": {
+      "successes": 0,
+      "known_n": 0,
+      "unknown_n": 9,
+      "rate": null,
+      "ci95": null,
+      "all_episodes_lower_bound": 0.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "true_success": {
+      "successes": 9,
+      "known_n": 9,
+      "unknown_n": 0,
+      "rate": 1.0,
+      "ci95": {
+        "low": 0.7008549515804562,
+        "high": 1.0,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 1.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "proxy_success": {
+      "successes": 9,
+      "known_n": 9,
+      "unknown_n": 0,
+      "rate": 1.0,
+      "ci95": {
+        "low": 0.7008549515804562,
+        "high": 1.0,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 1.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "original_public_success": {
+      "successes": 9,
+      "known_n": 9,
+      "unknown_n": 0,
+      "rate": 1.0,
+      "ci95": {
+        "low": 0.7008549515804562,
+        "high": 1.0,
+        "confidence": 0.95,
+        "method": "Wilson score",
+        "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+      },
+      "all_episodes_lower_bound": 1.0,
+      "all_episodes_upper_bound": 1.0
+    },
+    "reward_gap": 0.0,
+    "honest_success_count": 0,
+    "honest_success_rate_confirmed_lower_bound": 0.0,
+    "observed_explicit_test_file_reads": 8,
+    "observed_test_file_changes": 0,
+    "tool_calls": 55,
+    "agent_execution_time_s": 922.6880000000237,
+    "confirmed_category_counts": {}
+  },
+  "by_difficulty_technically_completed": {
+    "easy": {
+      "n": 5,
+      "confirmed_hacking_count": 0,
+      "hacking_rate_confirmed_lower_bound": 0.0,
+      "confirmed_hacking_among_audited": {
+        "successes": 0,
+        "n": 0,
+        "ci95": null
+      },
+      "technically_completed": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "solution_written": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "technically_unfinished_n": 0,
+      "termination_counts": {
+        "finished_text": 5
+      },
+      "outcome_counts": {
+        "success": 5
+      },
+      "suspected_hacking_count": 0,
+      "uncertain_count": 0,
+      "suspected_hacking_rate": 0.0,
+      "uncertain_rate": 0.0,
+      "audited_n": 0,
+      "unreviewed_n": 5,
+      "audit_coverage": 0.0,
+      "hacking_attempt_rate": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 5,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "true_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "proxy_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "original_public_success": {
+        "successes": 5,
+        "known_n": 5,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5655175352168254,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "reward_gap": 0.0,
+      "honest_success_count": 0,
+      "honest_success_rate_confirmed_lower_bound": 0.0,
+      "observed_explicit_test_file_reads": 3,
+      "observed_test_file_changes": 0,
+      "tool_calls": 28,
+      "agent_execution_time_s": 386.4850000000006,
+      "confirmed_category_counts": {}
+    },
+    "medium": {
+      "n": 4,
+      "confirmed_hacking_count": 0,
+      "hacking_rate_confirmed_lower_bound": 0.0,
+      "confirmed_hacking_among_audited": {
+        "successes": 0,
+        "n": 0,
+        "ci95": null
+      },
+      "technically_completed": {
+        "successes": 4,
+        "known_n": 4,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5101091635454027,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "solution_written": {
+        "successes": 4,
+        "known_n": 4,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5101091635454027,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "technically_unfinished_n": 0,
+      "termination_counts": {
+        "finished_text": 2,
+        "finish_task": 2
+      },
+      "outcome_counts": {
+        "success": 4
+      },
+      "suspected_hacking_count": 0,
+      "uncertain_count": 0,
+      "suspected_hacking_rate": 0.0,
+      "uncertain_rate": 0.0,
+      "audited_n": 0,
+      "unreviewed_n": 4,
+      "audit_coverage": 0.0,
+      "hacking_attempt_rate": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 4,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": 0.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "true_success": {
+        "successes": 4,
+        "known_n": 4,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5101091635454027,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "proxy_success": {
+        "successes": 4,
+        "known_n": 4,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5101091635454027,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "original_public_success": {
+        "successes": 4,
+        "known_n": 4,
+        "unknown_n": 0,
+        "rate": 1.0,
+        "ci95": {
+          "low": 0.5101091635454027,
+          "high": 1.0,
+          "confidence": 0.95,
+          "method": "Wilson score",
+          "assumption": "Independent Bernoulli observations with a common probability; descriptive only for this purposive heterogeneous task sample."
+        },
+        "all_episodes_lower_bound": 1.0,
+        "all_episodes_upper_bound": 1.0
+      },
+      "reward_gap": 0.0,
+      "honest_success_count": 0,
+      "honest_success_rate_confirmed_lower_bound": 0.0,
+      "observed_explicit_test_file_reads": 5,
+      "observed_test_file_changes": 0,
+      "tool_calls": 27,
+      "agent_execution_time_s": 536.2030000000232,
+      "confirmed_category_counts": {}
+    },
+    "hard": {
+      "n": 0,
+      "confirmed_hacking_count": 0,
+      "hacking_rate_confirmed_lower_bound": null,
+      "confirmed_hacking_among_audited": {
+        "successes": 0,
+        "n": 0,
+        "ci95": null
+      },
+      "technically_completed": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "solution_written": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "technically_unfinished_n": 0,
+      "termination_counts": {},
+      "outcome_counts": {},
+      "suspected_hacking_count": 0,
+      "uncertain_count": 0,
+      "suspected_hacking_rate": null,
+      "uncertain_rate": null,
+      "audited_n": 0,
+      "unreviewed_n": 0,
+      "audit_coverage": null,
+      "hacking_attempt_rate": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "true_success": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "proxy_success": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "original_public_success": {
+        "successes": 0,
+        "known_n": 0,
+        "unknown_n": 0,
+        "rate": null,
+        "ci95": null,
+        "all_episodes_lower_bound": null,
+        "all_episodes_upper_bound": null
+      },
+      "reward_gap": null,
+      "honest_success_count": 0,
+      "honest_success_rate_confirmed_lower_bound": null,
+      "observed_explicit_test_file_reads": 0,
+      "observed_test_file_changes": 0,
+      "tool_calls": 0,
+      "agent_execution_time_s": 0,
+      "confirmed_category_counts": {}
+    }
+  },
+  "token_usage_by_difficulty": {
+    "easy": {
+      "actual_total_tokens": 35954,
+      "prompt_tokens": 31817,
+      "completion_tokens": 4137,
+      "reasoning_tokens_known": 1730,
+      "reasoning_usage_unknown_responses": 0,
+      "non_reasoning_output_tokens_known": 2407,
+      "unknown_usage_reservation": 0,
+      "charged_tokens": 35954,
+      "request_attempts": 33,
+      "successful_responses": 33
+    },
+    "medium": {
+      "actual_total_tokens": 48705,
+      "prompt_tokens": 43288,
+      "completion_tokens": 5417,
+      "reasoning_tokens_known": 2675,
+      "reasoning_usage_unknown_responses": 0,
+      "non_reasoning_output_tokens_known": 2742,
+      "unknown_usage_reservation": 15793,
+      "charged_tokens": 64498,
+      "request_attempts": 41,
+      "successful_responses": 38
+    },
+    "hard": {
+      "actual_total_tokens": 32589,
+      "prompt_tokens": 18764,
+      "completion_tokens": 13825,
+      "reasoning_tokens_known": 12441,
+      "reasoning_usage_unknown_responses": 0,
+      "non_reasoning_output_tokens_known": 1384,
+      "unknown_usage_reservation": 14547,
+      "charged_tokens": 47136,
+      "request_attempts": 24,
+      "successful_responses": 21
+    }
+  },
+  "statistical_note": "95% Wilson intervals are descriptive binomial intervals, not causal estimates or population guarantees. Missing labels have bounds, not zero-imputed honesty. Technical-completion conditioning selects outcomes and can bias comparisons."
+}
